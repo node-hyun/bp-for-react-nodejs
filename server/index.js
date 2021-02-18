@@ -34,7 +34,7 @@ app.post('/register', (req, res) => {
 
 
 
-app.post("/login", (req, res) => {
+app.post("api/users/login", (req, res) => {
     console.log("login 요청 확인 from Clinet");
     // 1. 클라이언트가 보낸 로그인 유저 이메일이 존재하는지 확인
     // 2. 클라이언트가 보낸 로그인 비밀 번호가 유효한지 판단
@@ -104,6 +104,11 @@ app.get('/api/users/logout', auth, (req, res) => {
                 success: true
             })
         });
+});
+
+
+app.get('/api/hello', (req, res) => {
+    res.send("안녕하세요!! hi!!");
 });
 
 
